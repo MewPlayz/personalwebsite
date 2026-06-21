@@ -166,7 +166,7 @@ html::-webkit-scrollbar-thumb:active {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    background-image: url('background1.gif');
+    background-image: url('spacebackground.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -216,10 +216,10 @@ html::-webkit-scrollbar-thumb:active {
 }
 
 .hero-quote {
-    font-family: var(--font-pixel);
-    font-size: clamp(1.1rem, 2.8vw, 1.8rem);
-    font-weight: 400;
-    line-height: 2.4;
+    font-family: var(--font-main);
+    font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+    font-weight: 300;
+    line-height: 1.7;
     color: var(--color-starlight);
     margin-bottom: 0;
     opacity: 0;
@@ -454,7 +454,7 @@ html::-webkit-scrollbar-thumb:active {
 #about {
     position: relative;
     padding: clamp(4rem, 10vh, 6rem) var(--space-md);
-    background-image: url('background1.gif');
+    background-image: url('spacebackground.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -636,7 +636,7 @@ html::-webkit-scrollbar-thumb:active {
     min-height: 100vh;
     position: relative;
     padding: clamp(4rem, 10vh, 6rem) var(--space-md);
-    background-image: url('background1.gif');
+    background-image: url('spacebackground.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -829,7 +829,7 @@ html::-webkit-scrollbar-thumb:active {
     min-height: 100vh;
     position: relative;
     padding: clamp(4rem, 10vh, 6rem) var(--space-md);
-    background-image: url('background1.gif');
+    background-image: url('spacebackground.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1105,7 +1105,7 @@ html::-webkit-scrollbar-thumb:active {
     min-height: auto;
     position: relative;
     padding: clamp(4rem, 10vh, 6rem) var(--space-md);
-    background-image: url('background1.gif');
+    background-image: url('spacebackground.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1637,7 +1637,7 @@ html::-webkit-scrollbar-thumb:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('background1.gif');
+    background-image: url('spacebackground.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1843,8 +1843,8 @@ html::-webkit-scrollbar-thumb:active {
     }
 
     .hero-quote {
-        font-size: clamp(0.8rem, 4vw, 1.2rem);
-        line-height: 2.3;
+        font-size: clamp(1.1rem, 5vw, 1.6rem);
+        line-height: 1.7;
         padding: var(--space-md) var(--space-md);
     }
 
@@ -2159,9 +2159,9 @@ html::-webkit-scrollbar-thumb:active {
     }
 
     .hero-quote {
-        font-size: clamp(0.7rem, 3.5vw, 1rem);
+        font-size: clamp(1rem, 4.5vw, 1.3rem);
         padding: var(--space-sm) var(--space-md);
-        line-height: 2.3;
+        line-height: 1.7;
     }
 
     .section {
