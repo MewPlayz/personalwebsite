@@ -184,57 +184,46 @@ const projectLogoItemsClick = document.querySelectorAll('.project-logo-item');
 const projectDetailsPanel = document.getElementById('projectDetailsPanel');
 const closeProjectDetailsBtn = document.getElementById('closeProjectDetails');
 
-projectLogoItemsClick.forEach(item => {
-    item.addEventListener('click', () => {
-        const projectId = item.getAttribute('data-project');
+if (projectDetailsPanel && closeProjectDetailsBtn) {
+    projectLogoItemsClick.forEach(item => {
+        item.addEventListener('click', () => {
+            const projectId = item.getAttribute('data-project');
 
-        // Remove active class from all logo items
+            projectLogoItemsClick.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            const allProjectContent = document.querySelectorAll('.project-details-content');
+            allProjectContent.forEach(content => content.classList.remove('active'));
+
+            const selectedContent = document.querySelector(`[data-project-content="${projectId}"]`);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+
+            projectDetailsPanel.classList.add('active');
+
+            setTimeout(() => {
+                projectDetailsPanel.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+            }, 100);
+        });
+    });
+
+    closeProjectDetailsBtn.addEventListener('click', () => {
+        projectDetailsPanel.classList.remove('active');
         projectLogoItemsClick.forEach(i => i.classList.remove('active'));
-
-        // Add active class to clicked item
-        item.classList.add('active');
-
-        // Hide all project details content
         const allProjectContent = document.querySelectorAll('.project-details-content');
         allProjectContent.forEach(content => content.classList.remove('active'));
-
-        // Show the selected project details
-        const selectedContent = document.querySelector(`[data-project-content="${projectId}"]`);
-        if (selectedContent) {
-            selectedContent.classList.add('active');
-        }
-
-        // Show the details panel
-        projectDetailsPanel.classList.add('active');
-
-        // Smooth scroll to details panel
-        setTimeout(() => {
-            projectDetailsPanel.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest'
-            });
-        }, 100);
     });
-});
 
-// Close button functionality
-closeProjectDetailsBtn.addEventListener('click', () => {
-    projectDetailsPanel.classList.remove('active');
-
-    // Remove active class from all logo items
-    projectLogoItemsClick.forEach(i => i.classList.remove('active'));
-
-    // Hide all project details content
-    const allProjectContent = document.querySelectorAll('.project-details-content');
-    allProjectContent.forEach(content => content.classList.remove('active'));
-});
-
-// Close on Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && projectDetailsPanel.classList.contains('active')) {
-        closeProjectDetailsBtn.click();
-    }
-});
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectDetailsPanel.classList.contains('active')) {
+            closeProjectDetailsBtn.click();
+        }
+    });
+}
 
 // Keyboard Accessibility
 

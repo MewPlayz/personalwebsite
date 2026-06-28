@@ -68,7 +68,7 @@ body {
 
 html {
     scrollbar-width: thin;
-    scrollbar-color: #f5c842 #0a1628;
+    scrollbar-color: #c9a228 #0a1628;
 }
 
 html::-webkit-scrollbar {
@@ -81,9 +81,6 @@ html::-webkit-scrollbar-track {
 
 html::-webkit-scrollbar-thumb {
     background: #c9a228;
-    border-radius: 999px;
-    border: 2px solid #0a1628;
-    transition: background 0.3s ease;
 }
 
 html::-webkit-scrollbar-thumb:hover {
@@ -554,30 +551,25 @@ html::-webkit-scrollbar-thumb:active {
 }
 
 .about-scripture {
-    font-family: var(--font-main);
-    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
     font-style: italic;
-    font-weight: 300;
-    color: #e8f4ff;
-    line-height: 1.9;
+    font-weight: 400;
+    color: #c8dff0;
+    line-height: 1.85;
     margin-bottom: var(--space-xl);
     padding: var(--space-lg) var(--space-xl);
-    border-left: 3px solid rgba(77, 217, 255, 0.6);
-    background: rgba(77, 217, 255, 0.04);
-    box-shadow: -3px 0 20px rgba(77, 217, 255, 0.08);
-    text-shadow: 0 0 20px rgba(77, 217, 255, 0.12);
+    border-left: 2px solid rgba(245, 200, 66, 0.35);
 }
 
 .about-scripture cite {
     display: block;
-    font-family: var(--font-space);
+    font-family: var(--font-main);
     font-style: normal;
-    font-size: clamp(0.55rem, 1vw, 0.7rem);
-    color: var(--color-star-cyan);
-    margin-top: var(--space-sm);
-    letter-spacing: 0.2em;
-    text-shadow: 0 0 12px rgba(77, 217, 255, 0.8);
-    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #7ab8d8;
+    margin-top: 0.75rem;
 }
 
 .about-education {
@@ -1913,8 +1905,7 @@ html::-webkit-scrollbar-thumb:active {
     }
 
     .about-scripture cite {
-        font-size: 0.6rem;
-        letter-spacing: 0.15em;
+        font-size: 0.8rem;
     }
 
     .about-grid {
