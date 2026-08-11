@@ -334,9 +334,12 @@ body {
     color: var(--color-starlight);
     letter-spacing: 0.02em;
     line-height: 1.5;
-    padding: var(--space-sm);
+    padding: 0.5rem 1rem;
     background: rgba(77, 217, 255, 0.06);
     border: 1px solid rgba(77, 217, 255, 0.2);
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .about-intro {
@@ -599,6 +602,7 @@ body {
 
     .about-education {
         font-size: 1rem;
+        margin: 0 auto;
     }
 
     .about-intro,
