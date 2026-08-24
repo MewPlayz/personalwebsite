@@ -30,23 +30,24 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: #c9a228 #0a1628;
+    scrollbar-color: #24304a var(--color-midnight);
 }
 
 html::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 html::-webkit-scrollbar-track {
-    background: #0a1628;
+    background: var(--color-midnight);
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #c9a228;
+    background: #24304a;
+    border: 2px solid var(--color-midnight);
 }
 
 html::-webkit-scrollbar-thumb:hover {
-    background: #f5c842;
+    background: #32436b;
 }
 
 body {

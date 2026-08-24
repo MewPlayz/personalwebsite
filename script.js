@@ -78,152 +78,17 @@ if (aboutGrid) {
     fadeInObserver.observe(aboutGrid);
 }
 
-// Observe skill accordion cards for staggered fade-in animation
-const skillAccordionCards = document.querySelectorAll('.skill-accordion-card');
-skillAccordionCards.forEach((card, index) => {
-    // Add staggered delay for each card
-    card.style.transitionDelay = `${index * 0.05}s`;
-    fadeInObserver.observe(card);
-});
-
-// Observe project logo items for staggered fade-in animation
-const projectLogoItems = document.querySelectorAll('.project-logo-item');
-projectLogoItems.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 0.05}s`;
-    fadeInObserver.observe(item);
-});
-
-// Observe research interests cards for fade-in animation
-const interestsCards = document.querySelectorAll('.interests-card');
-interestsCards.forEach((card, index) => {
-    card.style.transitionDelay = `${index * 0.08}s`;
-    fadeInObserver.observe(card);
-});
-
-// Observe research blocks for fade-in animation
-const researchBlocks = document.querySelectorAll('.research-block');
-researchBlocks.forEach((block, index) => {
-    block.style.transitionDelay = `${index * 0.05}s`;
-    fadeInObserver.observe(block);
-});
-
-// Observe research project cards for staggered fade-in animation
-const researchProjectCards = document.querySelectorAll('.research-project-card');
-researchProjectCards.forEach((card, index) => {
-    card.style.transitionDelay = `${index * 0.04}s`;
-    fadeInObserver.observe(card);
-});
-
-// Observe socials section elements for fade-in animation
+// Observe socials icons for fade-in animation
 const socialsIcons = document.querySelector('.socials-icons');
-const blogAnnouncement = document.querySelector('.blog-announcement');
-const contactSection = document.querySelector('.contact-section');
-
 if (socialsIcons) {
     fadeInObserver.observe(socialsIcons);
 }
-
-if (blogAnnouncement) {
-    fadeInObserver.observe(blogAnnouncement);
-}
-
-if (contactSection) {
-    fadeInObserver.observe(contactSection);
-}
-
-// Accordion Functionality for Research Projects
-
-const accordionCards = document.querySelectorAll('.accordion-card');
-
-accordionCards.forEach(card => {
-    const header = card.querySelector('.accordion-header');
-
-    // Add keyboard accessibility
-    header.setAttribute('role', 'button');
-    header.setAttribute('tabindex', '0');
-    header.setAttribute('aria-expanded', 'false');
-
-    const toggleAccordion = () => {
-        const isActive = card.classList.contains('active');
-
-        // Optional: Close all other accordions (only one open at a time)
-        // Comment out these lines if you want multiple accordions open at once
-        accordionCards.forEach(otherCard => {
-            if (otherCard !== card) {
-                otherCard.classList.remove('active');
-                otherCard.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // Toggle the clicked accordion
-        card.classList.toggle('active');
-        header.setAttribute('aria-expanded', !isActive);
-    };
-
-    // Click event
-    header.addEventListener('click', toggleAccordion);
-
-    // Keyboard event (Enter or Space)
-    header.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggleAccordion();
-        }
-    });
-});
 
 // Initialize on Load
 
 window.addEventListener('load', () => {
     updateActiveLink();
 });
-
-// Projects Click-to-Reveal Functionality
-
-const projectLogoItemsClick = document.querySelectorAll('.project-logo-item');
-const projectDetailsPanel = document.getElementById('projectDetailsPanel');
-const closeProjectDetailsBtn = document.getElementById('closeProjectDetails');
-
-if (projectDetailsPanel && closeProjectDetailsBtn) {
-    projectLogoItemsClick.forEach(item => {
-        item.addEventListener('click', () => {
-            const projectId = item.getAttribute('data-project');
-
-            projectLogoItemsClick.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
-
-            const allProjectContent = document.querySelectorAll('.project-details-content');
-            allProjectContent.forEach(content => content.classList.remove('active'));
-
-            const selectedContent = document.querySelector(`[data-project-content="${projectId}"]`);
-            if (selectedContent) {
-                selectedContent.classList.add('active');
-            }
-
-            projectDetailsPanel.classList.add('active');
-
-            setTimeout(() => {
-                projectDetailsPanel.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest'
-                });
-            }, 100);
-        });
-    });
-
-    closeProjectDetailsBtn.addEventListener('click', () => {
-        projectDetailsPanel.classList.remove('active');
-        projectLogoItemsClick.forEach(i => i.classList.remove('active'));
-        const allProjectContent = document.querySelectorAll('.project-details-content');
-        allProjectContent.forEach(content => content.classList.remove('active'));
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && projectDetailsPanel.classList.contains('active')) {
-            closeProjectDetailsBtn.click();
-        }
-    });
-}
 
 // Keyboard Accessibility
 
